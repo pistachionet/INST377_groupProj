@@ -1,0 +1,238 @@
+<html>
+    <head>
+        <title>About Page</title>
+        <style>
+            /*Top Hand Navigation*/
+            body{
+                background-color: rgb(233, 232, 232);
+            }
+            
+
+            #header{
+                background-color: black;
+                text-align: center;
+                color: white;
+            }
+            .fugitive-image {
+                width: 80%; 
+                height: auto;
+            }
+            #main-nav{
+                background-color: #004791;
+            }
+            #main-nav li {
+                display:inline;
+                position:relative;
+                float: both;
+                top: 100%;
+            }
+            #main-nav ul ul {
+                display: none;
+                position: absolute;
+            }
+            #main-nav ul li{
+                list-style-type: none;
+                display: inline-block;
+                text-align: center;
+                padding-top: 5px;
+                padding-bottom: 5px; 
+                width: 32%;
+                position: relative;
+            }
+            #main-nav li:hover{
+                background-color: #FFD61A;
+                color: black;
+                text-align: center;
+                padding: none;
+            }
+            #main-nav li:hover ul{
+                display: block;
+                background-color: black;
+                padding: 0;
+                width: 100%;
+                text-align: center;
+            }
+            #nav{
+                color: white;
+            }
+            .main-container{
+                width: 100%;
+                height: 100%;
+            }
+            #moreAboutUs{
+                color: #004791; 
+                font-size: 40px;
+                font-weight: bolder;
+            }
+            #statement{
+                text-align: center;
+            }
+            .column {
+                float: left;
+                width: 33.33%;
+            }
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            #h{
+                color:#004791; 
+            }
+            #p{
+               font-size: 20px;
+            }
+            /* Our Team */
+            html {
+                box-sizing: border-box;
+            }
+
+              *, *:before, *:after {
+                box-sizing: inherit;
+            }
+            img {
+                float: left;
+                width:  100%;
+                height: 65%;
+                object-fit: cover;
+            }
+            #ourTeam{
+                text-align: center;
+                font-size: 35px;
+                font-weight: bolder;
+            }
+            .row{
+                margin: auto;
+                width: 90%;
+                padding: 10px;
+            }
+            .column {
+                width: 33.3%;
+                margin-bottom: 16px;
+                padding: 0 8px;
+            }
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                margin: 8px;
+            }
+            #fugitive-info {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 10px; 
+        }
+
+        .fugitive-box {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+        .fugitive-box img {
+            width: 100%; 
+            height: auto;
+            margin-bottom: 10px; 
+        }
+
+            .about-section {
+                padding: 50px;
+                text-align: center;
+                background-color: #474e5d;
+                color: white;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .container::after, .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            .title {
+                color: #004791;
+            }
+            @media screen and (max-width: 650px) {
+            .column {
+                  width: 100%;
+                  display: block;
+                }
+            }
+            
+
+        </style>
+    </head>
+    <body>
+         <!-- Header Title Bar -->
+         <header id="header">
+            <h1>Home</h1>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav id="main-nav">
+            <ul>
+                <a href="home.html">
+                <li id="nav">HOME</li>
+                </a>
+                <a href="help.html">
+                <li id="nav">HELP</li>
+                </a>
+                <a href="about.html">
+                <li id="nav">ABOUT</li>
+                </a>
+            </ul>
+        </nav>
+        <hr>
+        <div id="fugitive-info">
+        </div>
+    
+        <script>
+    // Make a request to the FBI API
+    fetch('https://api.fbi.gov/wanted/v1/list')
+        .then(response => response.json())
+        .then(data => {
+            // get top 10?
+            const topFugitives = data.items.slice(0, 10);
+
+            //  box for each of the top 10 fugitives
+            topFugitives.forEach(fugitive => {
+                createFugitiveBox(fugitive);
+            });
+        })
+        
+
+    function createFugitiveBox(fugitive) {
+        var fugitiveBox = document.createElement('div');
+        fugitiveBox.classList.add('fugitive-box');
+
+        var name = document.createElement('h2');
+        name.textContent = fugitive.title;
+
+        var picture = document.createElement('img');
+        picture.src = fugitive.images[0].large;
+        picture.alt = 'Fugitive Picture';
+        picture.classList.add('fugitive-image'); 
+
+
+        var reward = document.createElement('p');
+        reward.innerHTML = `<strong>Reward:</strong> ${fugitive.reward_text}`;
+
+        var description = document.createElement('p');
+        description.innerHTML = `<strong>Description:</strong> ${fugitive.description}`;
+
+        var sex = document.createElement('p');
+        sex.innerHTML = `<strong>Sex:</strong> ${fugitive.sex}`;
+
+        // Append to the fugitive box
+        fugitiveBox.appendChild(name);
+        fugitiveBox.appendChild(picture);
+        fugitiveBox.appendChild(reward);
+        fugitiveBox.appendChild(description);
+        fugitiveBox.appendChild(sex);
+
+        // Append the fugitive box to the fugitive-info section
+        document.getElementById('fugitive-info').appendChild(fugitiveBox);
+    }
+</script>
+
+    </body>
+    </html>
