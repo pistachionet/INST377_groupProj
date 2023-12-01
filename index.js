@@ -16,38 +16,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  console.log(`Getting Customer`);
+  console.log(`Getting Team`);
 
-  const { data, error } = await supabase.from("Customer").select();
+  const { data, error } = await supabase.from("Team").select();
 
   if (error) {
     console.log(error);
   } else if (data) {
     res.send(data);
   }
-});
-
-app.post("/", async (req, res) => {
-  console.log("Adding Customer");
-
-  var firstName = req.body.firstName;
-  var lastName = req.body.lastName;
-  var state = req.body.state;
-
-  const { data, error } = await supabase
-    .from("Customer")
-    .insert([
-      {
-        cust_first_name: firstName,
-        cust_last_name: lastName,
-        cust_state: state,
-      },
-    ])
-    .select();
-
-  console.log(data);
-  res.header("Content-type", "application/json");
-  res.send(data);
 });
 
 app.listen(port, () => {
