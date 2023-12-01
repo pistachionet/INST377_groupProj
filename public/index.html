@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <script src="home.js" defer></script>
+    <style>
+      /*Top Hand Navigation*/
+      body {
+        background-color: rgb(233, 232, 232);
+      }
+      #header {
+        background-color: black;
+        text-align: center;
+        color: white;
+        width: 1500px;
+      }
+      .fugitive-image {
+        width: 80%;
+        height: auto;
+      }
+      #main-nav {
+        background-color: #004791;
+        width: 1500px;
+      }
+      #main-nav li {
+        display: inline;
+        position: relative;
+        float: both;
+        top: 100%;
+      }
+      #main-nav ul ul {
+        display: none;
+        position: absolute;
+      }
+      #main-nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 32%;
+        position: relative;
+      }
+      #main-nav li:hover {
+        background-color: #ffd61a;
+        color: black;
+        text-align: center;
+        padding: none;
+      }
+      #main-nav li:hover ul {
+        display: block;
+        background-color: black;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+      }
+      #nav {
+        color: white;
+      }
+      #h {
+        color: #004791;
+      }
+      #p {
+        font-size: 20px;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      #line {
+        width: 1500px;
+      }
+      #fugitive-info {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .fugitive-box {
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+      }
+      .fugitive-box img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .about-section {
+        padding: 50px;
+        text-align: center;
+        background-color: #474e5d;
+        color: white;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .container::after,
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .title {
+        color: #004791;
+      }
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Title Bar -->
+    <header id="header">
+      <h1>Wanted Fugitives</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav id="main-nav">
+      <ul>
+        <a href="index.html">
+          <li id="nav">HOME</li>
+        </a>
+        <a href="help.html">
+          <li id="nav">HELP</li>
+        </a>
+        <a href="about.html">
+          <li id="nav">ABOUT</li>
+        </a>
+      </ul>
+    </nav>
+    <hr id="line" />
+    <div id="fugitive-info"></div>
+  </body>
+</html>

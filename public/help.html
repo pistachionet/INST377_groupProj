@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Help Page</title>
+    <style>
+      /*Top Hand Navigation*/
+      body {
+        background-color: rgb(233, 232, 232);
+      }
+      #header {
+        background-color: black;
+        text-align: center;
+        color: white;
+        font-family: "Times New Roman", Times, serif;
+      }
+      #main-nav {
+        background-color: #004791;
+        font-family: "Times New Roman", Times, serif;
+      }
+      #main-nav li {
+        display: inline;
+        position: relative;
+        float: both;
+        top: 100%;
+      }
+      #main-nav ul ul {
+        display: none;
+        position: absolute;
+      }
+      #main-nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 32%;
+        position: relative;
+      }
+      #main-nav li:hover {
+        background-color: #ffd61a;
+        color: black;
+        text-align: center;
+        padding: none;
+      }
+      #main-nav li:hover ul {
+        display: block;
+        background-color: black;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+      }
+      #nav {
+        color: white;
+      }
+      .parent-help {
+        font-family: "Times New Roman", Times, serif;
+      }
+      .child-help {
+        align-items: right;
+        justify-content: right;
+      }
+      .button-30 {
+        align-items: center;
+        appearance: none;
+        background-color: #fcfcfd;
+        border-radius: 4px;
+        border-width: 0;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+          rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #36395a;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bolder;
+        height: 100px;
+        width: 500px;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow 0.15s, transform 0.15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow, transform;
+        font-size: 30px;
+      }
+      .button-30:focus {
+        box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+          rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+      }
+      .button-30:hover {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+          rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+        transform: translateY(-2px);
+      }
+      .button-30:active {
+        box-shadow: #d6d6e7 0 3px 7px inset;
+        transform: translateY(2px);
+      }
+      th,
+      td {
+        border-bottom: 1px solid black;
+      }
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+        padding: 10px;
+        border-right: 1px solid black;
+      }
+    </style>
+    <link rel="stylesheet" href="style/help.css" />
+  </head>
+  <body>
+    <!-- Header Title Bar -->
+    <header id="header">
+      <h1>How Can We Help?</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav id="main-nav">
+      <ul>
+        <a href="index.html">
+          <li id="nav">HOME</li>
+        </a>
+        <a href="help.html">
+          <li id="nav">HELP</li>
+        </a>
+        <a href="about.html">
+          <li id="nav">ABOUT</li>
+        </a>
+      </ul>
+    </nav>
+
+    <div class="parent-help">
+      <div class="child-help1">
+        <h1>FAQ</h1>
+        <a href="mailto: helpcenter@umd.com"
+          ><button class="button-30">Contact Us</button></a
+        >
+      </div>
+
+      <div class="child-help">
+        <!-- Make a table that has a question and then an answer to the right of it. Make it so that it is a list of questions and answers and the spacing is event between them. Add the css too as I will add it to my stylesheet.
+             -->
+        <table>
+          <tr>
+            <th id="question"><h2>Question</h2></th>
+            <th id="answer"><h2>Answer</h2></th>
+          </tr>
+
+          <tr>
+            <td><b>What is the main goal of your website?</b></td>
+            <td>
+              Our website aims to reorganize and present the FBI's top 10 Most
+              Wanted Fugitives in a more structured and visually appealing
+              manner, making it easier for the public and stakeholders to
+              identify and be on the lookout for these fugitives.
+            </td>
+          </tr>
+
+          <tr>
+            <td><b>Who benefits from this platform?</b></td>
+            <td>
+              The primary beneficiaries are the FBI, the general public, news
+              channels, and even criminals. Our platform ensures that vital
+              information is disseminated efficiently and effectively, thereby
+              aiding in the swift capture of wanted criminals.
+            </td>
+          </tr>
+
+          <tr>
+            <td><b>Why did you choose the FBI Wanted API?</b></td>
+            <td>
+              We were keen on understanding and showcasing the top ten most
+              wanted criminals. The FBI Wanted API provides this specific data,
+              and we believe that by presenting it in a refined manner, we can
+              assist in the apprehension of these individuals.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>What technologies are you using to develop the website?</b>
+            </td>
+            <td>
+              We're utilizing Visual Studio Code for front-end development with
+              HTML, CSS, and Javascript. For API requests, we're using tools
+              like Insomnia and Postman.
+            </td>
+          </tr>
+
+          <tr>
+            <td><b>Is the website mobile-responsive?</b></td>
+            <td>
+              Yes, our platform is designed to be accessible and user-friendly
+              across various devices, including smartphones, computers, tablets,
+              and TVs.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <b
+                >How does the platform contribute to catching fugitives
+                faster?</b
+              >
+            </td>
+            <td>
+              By presenting the most wanted list in a coherent and engaging
+              manner, citizens are better informed and can be more vigilant.
+              This increased awareness can lead to faster identification and
+              capture of these fugitives.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <b
+                >How will you present the importance of your platform to the
+                public?</b
+              >
+            </td>
+            <td>
+              We plan to conduct a detailed showcase or presentation,
+              demonstrating the different features and utilities of our
+              platform, explaining its significance in aiding the FBI and
+              ensuring public safety.
+            </td>
+          </tr>
+
+          <tr>
+            <td><b>Where can I access the original FBI Wanted list?</b></td>
+            <td>
+              The original list can be accessed on the FBI's official website at
+              <a href="https://www.fbi.gov/wanted/topten"
+                >FBI's Top Ten Most Wanted Fugitives.</a
+              >
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
