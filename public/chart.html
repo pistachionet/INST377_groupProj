@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart Page</title>
+    <script src="chart.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <style>
+      /*Top Hand Navigation*/
+      body {
+        background-color: rgb(233, 232, 232);
+      }
+      #header {
+        background-color: black;
+        text-align: center;
+        color: white;
+      }
+      #main-nav {
+        background-color: #004791;
+      }
+      #main-nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        list-style-type: none;
+      }
+      #main-nav a {
+        text-decoration: none;
+      }
+      #main-nav ul li {
+        text-align: center;
+        padding: 5px;
+      }
+      #main-nav li:hover {
+        background-color: #ffd61a;
+        color: black;
+        text-align: center;
+        padding: none;
+      }
+      #main-nav li:hover ul {
+        display: block;
+        background-color: black;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+      }
+      #nav {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Title Bar -->
+    <header id="header">
+      <h1>Charting Demographics of Fugitives</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav id="main-nav">
+      <ul>
+        <a href="index.html">
+          <li id="nav">HOME</li>
+        </a>
+        <a href="chart.html">
+          <li id="nav">CHART</li>
+        </a>
+        <a href="help.html">
+          <li id="nav">HELP</li>
+        </a>
+        <a href="about.html">
+          <li id="nav">ABOUT</li>
+        </a>
+      </ul>
+    </nav>
+    <hr />
+    <div>
+      <h1>Race of Fugitives</h1>
+      <canvas id="myChart"></canvas>
+    </div>
+  </body>
+</html>

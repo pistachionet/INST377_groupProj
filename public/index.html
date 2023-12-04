@@ -15,7 +15,6 @@
         background-color: black;
         text-align: center;
         color: white;
-        width: 1500px;
       }
       .fugitive-image {
         width: 80%;
@@ -23,26 +22,19 @@
       }
       #main-nav {
         background-color: #004791;
-        width: 1500px;
       }
-      #main-nav li {
-        display: inline;
-        position: relative;
-        float: both;
-        top: 100%;
+      #main-nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        list-style-type: none;
       }
-      #main-nav ul ul {
-        display: none;
-        position: absolute;
+      #main-nav a {
+        text-decoration: none;
       }
       #main-nav ul li {
-        list-style-type: none;
-        display: inline-block;
         text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        width: 32%;
-        position: relative;
+        padding: 5px;
       }
       #main-nav li:hover {
         background-color: #ffd61a;
@@ -129,6 +121,9 @@
         <a href="index.html">
           <li id="nav">HOME</li>
         </a>
+        <a href="chart.html">
+          <li id="nav">CHART</li>
+        </a>
         <a href="help.html">
           <li id="nav">HELP</li>
         </a>
@@ -139,5 +134,6 @@
     </nav>
     <hr id="line" />
     <div id="fugitive-info"></div>
+    <br /><br />
   </body>
 </html>

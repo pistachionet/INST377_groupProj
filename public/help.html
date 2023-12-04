@@ -12,30 +12,26 @@
         background-color: black;
         text-align: center;
         color: white;
-        font-family: "Times New Roman", Times, serif;
+      }
+      .fugitive-image {
+        width: 80%;
+        height: auto;
       }
       #main-nav {
         background-color: #004791;
-        font-family: "Times New Roman", Times, serif;
       }
-      #main-nav li {
-        display: inline;
-        position: relative;
-        float: both;
-        top: 100%;
+      #main-nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        list-style-type: none;
       }
-      #main-nav ul ul {
-        display: none;
-        position: absolute;
+      #main-nav a {
+        text-decoration: none;
       }
       #main-nav ul li {
-        list-style-type: none;
-        display: inline-block;
         text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        width: 32%;
-        position: relative;
+        padding: 5px;
       }
       #main-nav li:hover {
         background-color: #ffd61a;
@@ -53,8 +49,15 @@
       #nav {
         color: white;
       }
+      #faq {
+        font-weight: bold;
+        font-size: 100px;
+        text-align: center;
+        justify-self: center;
+      }
       .parent-help {
         font-family: "Times New Roman", Times, serif;
+        display: flex;
       }
       .child-help {
         align-items: right;
@@ -92,6 +95,7 @@
         white-space: nowrap;
         will-change: box-shadow, transform;
         font-size: 30px;
+        margin-right: 10px;
       }
       .button-30:focus {
         box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
@@ -108,14 +112,17 @@
       }
       th,
       td {
-        border-bottom: 1px solid black;
+        border-bottom: 3px solid black;
+        border-top: 3px solid black;
+        font-size: larger;
       }
       table,
       th,
       td {
         border-collapse: collapse;
-        padding: 10px;
-        border-right: 1px solid black;
+        padding: 15px;
+        border-right: 3px solid black;
+        border-left: 3px solid black;
       }
     </style>
     <link rel="stylesheet" href="style/help.css" />
@@ -132,6 +139,9 @@
         <a href="index.html">
           <li id="nav">HOME</li>
         </a>
+        <a href="chart.html">
+          <li id="nav">CHART</li>
+        </a>
         <a href="help.html">
           <li id="nav">HELP</li>
         </a>
@@ -143,7 +153,7 @@
 
     <div class="parent-help">
       <div class="child-help1">
-        <h1>FAQ</h1>
+        <h1 id="faq">FAQ</h1>
         <a href="mailto: helpcenter@umd.com"
           ><button class="button-30">Contact Us</button></a
         >
