@@ -1,4 +1,4 @@
-async function chartData() {
+async function chartData(str) {
   raceOfFugitives = [];
   numberOfFugitives = [];
   await fetch("https://api.fbi.gov/wanted/v1/list")
@@ -12,7 +12,7 @@ async function chartData() {
         if (items[i].race == null) {
           continue;
         }
-        if (!race_index[items[i].race]) {
+        if (race_index[items[i].race] === undefined) {
           console.log(!race_index[items[i].race]);
           console.log(items[i].race);
           race_index[items[i].race] = raceOfFugitives.length;
