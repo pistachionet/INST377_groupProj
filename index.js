@@ -15,6 +15,14 @@ const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 app.get("/", (req, res) => {
   res.sendFile("public/index.html", { root: __dirname });
 });
+//This will go to the chart page
+app.get("/chart", (req, res) => {
+  res.sendFile("public/chart.html", { root: __dirname });
+});
+//This will go to the help page
+app.get("/help", (req, res) => {
+  res.sendFile("public/help.html", { root: __dirname });
+});
 
 //This will go to the about page
 app.get("/team", async (req, res) => {
