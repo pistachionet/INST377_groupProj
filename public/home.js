@@ -24,6 +24,7 @@ function getData() {
     name.textContent = fugitive.title;
 
     var picture = document.createElement("img");
+
     picture.src = fugitive.images[0].original;
     picture.alt = "Fugitive Picture";
     picture.classList.add("fugitive-image");
