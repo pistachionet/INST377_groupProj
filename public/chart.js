@@ -10,6 +10,8 @@ async function chartData(str) {
         if (items[i].race == null) {
           continue;
         }
+        items[i].race =
+          items[i].race.charAt(0).toUpperCase() + items[i].race.slice(1);
         if (race_index[items[i].race] === undefined) {
           race_index[items[i].race] = raceOfFugitives.length;
           raceOfFugitives.push(items[i].race);
