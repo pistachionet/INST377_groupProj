@@ -3,7 +3,7 @@
 https://www.fbi.gov/wanted/api
 
 # Team:
-Navid Misaghian (UID:117270976), Kristina Finley, Chinedu Onwuka
+Navid Misaghian (UID:117270976), Kristina Finley, Chukwunedu Onwuka
 
 # Title of the Project:
 Top 10 Most Wanted Fugitives
